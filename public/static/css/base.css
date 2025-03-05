@@ -1,0 +1,70 @@
+/* base.css */
+
+/* Logo styling */
+.ecommnav img {
+    border-radius: 20px;
+    width: 170px;
+}
+
+/* Search input styling */
+.ecommsearch {
+    width: 500px; 
+    height: 50px; 
+    border-radius: 10px;
+    font-size: 30px;
+    border: 1px solid #ccc; /* Light border */
+    padding: 10px 15px; /* Inner spacing */
+    margin-right: 5px;
+    outline: none; /* Remove focus outline */
+    transition: 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Search button styling */
+.ecommsearchbtn {
+    height: 48px;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments for tablets and desktops */
+@media (max-width: 992px) {
+    .ecommsearch {
+        width: 300px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .ecommsearchbtn {
+        height: 43px;
+    }
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    .ecommsearch {
+        width: 100%;
+        max-width: 250px;
+        height: 40px;
+        font-size: 18px;
+    }
+    .ecommsearchbtn {
+        height: 40px;
+    }
+    .navbar .form-inline {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 576px) {
+    .ecommnav img {
+        width: 140px;
+    }
+    .ecommsearch {
+        max-width: 200px;
+        height: 36px;
+        font-size: 16px;
+    }
+    .ecommsearchbtn {
+        height: 36px;
+    }
+}

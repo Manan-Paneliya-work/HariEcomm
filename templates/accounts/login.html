@@ -1,0 +1,45 @@
+{% extends "base/base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4 shadow-lg login-card">
+        <h2 class="text-center text-white">Login</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% include "base/alert.html" %}
+            <div class="form-group">
+                <label for="username" class="text-white">Username</label>
+                <input type="text" id="username" name="email" class="form-control" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="text-white">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+            <p class="text-center mt-3">
+              <a href="{% url 'register' %}" class="text-white">Don't have an account? Register here</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right,rgb(237, 252, 234),rgb(187, 255, 187),rgb(237, 252, 234));
+    }
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+        background: #2e7d32;
+        border-radius: 10px;
+    }
+    .form-control {
+        border-radius: 20px;
+    }
+    .btn {
+        border-radius: 20px;
+    }
+</style>
+{% endblock body %}

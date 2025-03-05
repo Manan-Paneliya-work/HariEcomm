@@ -1,0 +1,57 @@
+{% extends "base/base.html" %}
+
+{% block title %}Register{% endblock title %}
+
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card p-4 shadow-lg register-card">
+        <h2 class="text-center text-white">Register</h2>
+        <form method="POST">
+            {% csrf_token %} 
+            {% include "base/alert.html" %}   
+
+            <div class="form-group">
+                <label for="firstname" class="text-white">First Name</label>
+                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter first name" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="text-white">Last Name</label>
+                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Enter last name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" class="text-white">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="text-white">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-block">Register</button>
+            <p class="text-center mt-3">
+                {% comment %} <a href="{% url 'login' %}" class="text-white">Already have an account? Login here</a> {% endcomment %}
+                <a href="{% url 'login' %}" class="text-white">Already have an account? Login here</a>
+
+
+            </p>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right,rgb(237, 252, 234),rgb(187, 255, 187),rgb(237, 252, 234));
+    }
+    .register-card {
+        width: 100%;
+        max-width: 400px;
+        background: #2e7d32;
+        border-radius: 10px;
+    }
+    .form-control {
+        border-radius: 20px;
+    }
+    .btn {
+        border-radius: 20px;
+    }
+</style>
+{% endblock body %}
